@@ -216,6 +216,7 @@
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Apellido</th>
                                     <th scope="col">Celular</th>
+                                    <th scope="col">Distrito</th>
                                     <th scope="col" class="text-end">Acciones</th>
                                 </tr>
                             </thead>
@@ -228,6 +229,11 @@
                                         <td>
                                             <span class="badge bg-secondary">
                                                 <i class="bi bi-phone me-1"></i><%= vendedor.cel_ven %>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-secondary">
+                                                <i class="bi bi-map me-1"></i><%= vendedor.distrito %>
                                             </span>
                                         </td>
                                         <td class="text-end action-buttons">
