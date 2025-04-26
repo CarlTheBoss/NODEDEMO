@@ -166,14 +166,15 @@ class VendedorController {
           {
             table: {
               headerRows: 1,
-              widths: ["auto", "*", "*", "auto"],
+              widths: ["auto", "*", "*", "auto", "*"],
               body: [
-                ["ID", "Nombre", "Apellido", "Celular"],
+                ["ID", "Nombre", "Apellido", "Celular", "Distrito"],
                 ...vendedores.map((v) => [
                   v.id_ven,
                   v.nom_ven,
                   v.ape_ven,
                   v.cel_ven,
+                  v.distrito
                 ]),
               ],
             },
@@ -230,7 +231,7 @@ class VendedorController {
       // json2csv se requiere aquí dentro del método
       const { Parser } = require("json2csv");
 
-      const fields = ["id_ven", "nom_ven", "ape_ven", "cel_ven"];
+      const fields = ["id_ven", "nom_ven", "ape_ven", "cel_ven", "distrito"];
       const opts = { fields };
       const parser = new Parser(opts);
       const csv = parser.parse(vendedores);
@@ -278,6 +279,7 @@ class VendedorController {
               <th>Nombre</th>
               <th>Apellido</th>
               <th>Celular</th>
+              <th>Distrito</th>
             </tr>
           </thead>
           <tbody>
@@ -291,6 +293,7 @@ class VendedorController {
             <td>${v.nom_ven}</td>
             <td>${v.ape_ven}</td>
             <td>${v.cel_ven}</td>
+            <td>${v.distrito}</td>
           </tr>
         `;
       });
